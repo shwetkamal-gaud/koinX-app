@@ -26,14 +26,18 @@ const About = () => {
             high24h: singleCoin?.market_data?.high_24h?.usd ?? 0,
             volume24: singleCoin?.market_data?.total_volume?.usd ?? 0,
             change24h: singleCoin?.market_data?.price_change_percentage_24h ?? 0,
-            circulatingSupply: singleCoin?.market_data?.circulating_supply  ?? 0,
+            circulatingSupply: singleCoin?.market_data?.circulating_supply ?? 0,
             maxSupply: singleCoin?.market_data?.max_supply ?? 0
         })
     }, [singleCoin])
-    const disc = document.getElementById('disc')
-    if (disc) {
-        disc.innerHTML = data.discription
-    }
+    useEffect(() => {
+        if (typeof window !== "undefined" && document) {
+            const disc = document.getElementById("disc");
+            if (disc) {
+                disc.innerHTML = singleCoin?.description?.en || "No description available.";
+            }
+        }
+    }, [singleCoin]);
     return (
         <div>
             <div className='border-bottom p-2'>

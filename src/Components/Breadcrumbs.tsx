@@ -19,11 +19,11 @@ const Breadcrumbs = () => {
                 {pathArray.map((item, id) => {
                     return (
                         <li key={id}>
-                            <div className="d-flex align-items-center justify-content-center ">
+                            <div className="d-flex align-items-center text-align-center justify-content-center ">
                                 <svg width={6} className="mx-1 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
                                 </svg>
-                                <a href={`/${item}`} className="ms-1 text-align-center  breadcrumb-item">{item.slice(0, 1).toUpperCase() + item.slice(1,)}</a>
+                                <a href={`/${item}`} className="ms-1 breadcrumb-item">{item.slice(0, 1).toUpperCase() + item.slice(1,)}</a>
                             </div>
                         </li>
                     )
