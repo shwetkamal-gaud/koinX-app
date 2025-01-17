@@ -26,13 +26,13 @@ const CryptoCoins = () => {
       dispatch(getData())
       dispatch(getSingleCoins(`${coins}`))
     }
-  }, [coins])
+  }, [router])
 
   useEffect(() => {
     if (singleCoin?.symbol) {
       dispatch(getTrades(`${singleCoin?.symbol?.toUpperCase()}USDT`))
     }
-  }, [singleCoin])
+  }, [singleCoin, router])
 
 
 
