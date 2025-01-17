@@ -106,7 +106,7 @@ const OverViewTab = () => {
                     <span>${high.toFixed(2)}</span>
                 </div>
             </div>
-            <div className="mb-6">
+            {/* <div className="mb-6">
                 <div className="d-flex justify-content-between  text-secondary">
                     <span>52W Low</span>
                     <span>52W High</span>
@@ -124,7 +124,7 @@ const OverViewTab = () => {
                     <span>${yearLow.toFixed(2)}</span>
                     <span>${yearHigh.toFixed(2)}</span>
                 </div>
-            </div>
+            </div> */}
             <h3 className='fw-semibold text-secondary'>Fundamentals</h3>
             <div className="row  text-secondary">
                 <div className='col-md-6 col-12'>
@@ -133,12 +133,12 @@ const OverViewTab = () => {
                     <p className="d-flex justify-content-between border-bottom p-2">24h Low / 24h High
                         <span className="text-align-end">${low_24h?.toLocaleString()} / ${high_24h?.toLocaleString()}</span></p>
 
-                    <p className="d-flex justify-content-between border-bottom p-2">7d Low / 7d High
-                        <span className="text-align-end">${low_7d?.toLocaleString()} / ${hihg_7d?.toLocaleString()}</span></p>
+                    <p className="d-flex justify-content-between border-bottom p-2">52w Low / 52w High
+                        <span className="text-align-end">${yearLow?.toFixed(2)?.toLocaleString()} / ${yearHigh?.toFixed(2).toLocaleString()}</span></p>
 
                     <p className="d-flex justify-content-between border-bottom p-2">Trading Volume
                         <span className="text-align-end">${total_volume?.toLocaleString()}</span></p>
-                    
+
                     <p className="d-flex justify-content-between border-bottom p-2">All-Time High
                         <span className='d-flex flex-column text-end'>
                             <span className='text-align-end'>

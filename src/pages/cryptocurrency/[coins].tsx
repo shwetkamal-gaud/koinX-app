@@ -18,15 +18,14 @@ const CryptoCoins = () => {
   const { singleCoin } = useSelector((state: RootState) => state.api)
   useEffect(() => {
     if (coins) {
+      dispatch(getData())
       dispatch(getSingleData(`${coins}`))
       dispatch(getTrending())
       dispatch(getDataByDays({ days: 1, coins }))
       dispatch(getDataByDays({ days: 365, coins }))
-      dispatch(getDataByDays({ days: 7, coins }))
-      dispatch(getData())
       dispatch(getSingleCoins(`${coins}`))
     }
-  }, [router])
+  }, [coins,  router])
 
   useEffect(() => {
     if (singleCoin?.symbol) {
