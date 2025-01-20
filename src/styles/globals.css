@@ -18,7 +18,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -41,7 +41,7 @@ a {
 }
 
 .nav-btn {
-  background-color: rgb(46, 91, 176) !important;
+  background-color: #0066ff !important;
   color: white !important;
 
 }
@@ -103,10 +103,12 @@ tr {
 
 .gradient-bar {
   position: relative;
-  width: 55vw;
+  width: 53vw;
   height: 6px;
   background: linear-gradient(to right, red, yellow, green);
   border-radius: 4px;
+  display: flex;
+  align-items: flex-start;
 }
 
 
@@ -142,11 +144,12 @@ p {
   overflow-y: auto;
 }
 
+
 .blur-filter {
   position: sticky !important;
   top: 0;
   z-index: 50;
-  background-color: #ffffff1a !important;
+  background: linear-gradient(135deg, #0c2135, #002a3c);
   backdrop-filter: blur(20px);
 }
 
@@ -166,5 +169,111 @@ p {
 }
 
 .height {
-  height: 80vh;
+  height: 83vh;
+}
+
+.hero-container {
+  position: relative;
+  height: 83.8vh;
+  background: linear-gradient(135deg, #001f3f, #00364d);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  z-index: 10;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 102, 255, 0.5);
+}
+
+.floating-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.icon {
+  position: absolute;
+  width: 50px;
+  animation: float 6s infinite ease-in-out;
+}
+
+.icon1 {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.icon2 {
+  top: 20%;
+  right: 10%;
+  animation-delay: 1s;
+}
+
+.icon3 {
+  bottom: 32%;
+  right: 12%;
+  animation-delay: 2s;
+}
+
+.icon4 {
+  top: 50%;
+  left: 24%;
+  animation-delay: 3s;
+}
+.icon5 {
+  bottom:  5%;
+  right: 18%;
+  animation-delay: 4s;
+}
+
+.icon6 {
+  top: 80%;
+  left: 40%;
+  animation-delay: 5s;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }

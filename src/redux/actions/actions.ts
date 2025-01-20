@@ -48,7 +48,7 @@ export const getTrending = (): UnknownAction => {
 }
 
 
-export const getDataByDays = (payload: { days: number, coins: string | string[] }): UnknownAction => {
+export const getDataByDays = (payload: string): UnknownAction => {
     return (
         {
             type: GET_DATA_BY_DAY,

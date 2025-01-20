@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Breadcrumbs from "./Breadcrumbs"
 
 
 const navigation = [
@@ -10,11 +11,11 @@ const navigation = [
 
 export default function Navbar() {
     return (
-        <nav className="navbar blur-filter navbar-expand-lg">
+        <nav className="navbar blur-filter navbar-expand-lg flex-column align-items-start shadow-lg">
             <div className="container-fluid d-flex">
-                <Link className="navbar-brand fs-1" href="#">Koin<span style={{ color: 'rgb(46, 91, 176)' }}>X</span></Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                <Link className="navbar-brand fs-1 text-white" href="#">Koin<span style={{ color: 'rgb(46, 91, 176)' }}>X</span></Link>
+                <button className="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon "></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-md-end " id="navbarNav">
                     <ul className="navbar-nav">
@@ -24,7 +25,7 @@ export default function Navbar() {
                                     key={item.name}
                                     href={item.href}
                                     aria-current={item.current ? 'page' : undefined}
-                                    className={`${navigation.length - 1 === index ? 'nav-btn btn mx-auto' : ''} nav-link`}
+                                    className={`${navigation.length - 1 === index ? 'nav-btn btn mx-auto' : ''} nav-link text-white`}
                                 >
                                     {item.name}
                                 </Link>
@@ -33,6 +34,7 @@ export default function Navbar() {
                     </ul>
                 </div>
             </div>
+            <Breadcrumbs />
         </nav>
     )
 }

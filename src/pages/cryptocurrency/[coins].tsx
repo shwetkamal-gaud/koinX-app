@@ -21,8 +21,8 @@ const CryptoCoins = () => {
       dispatch(getData())
       dispatch(getSingleData(`${coins}`))
       dispatch(getTrending())
-      dispatch(getDataByDays({ days: 1, coins }))
-      dispatch(getDataByDays({ days: 365, coins }))
+      dispatch(getDataByDays(`${coins}`))
+     
       dispatch(getSingleCoins(`${coins}`))
     }
   }, [coins,  router])

@@ -20,8 +20,6 @@ const OverViewTab = () => {
         atl: 0,
         atl_date: '',
         ath_date: '',
-        low_7d: 0,
-        hihg_7d: 0,
     })
     const [data, setData] = useState({
         low: 0,
@@ -32,11 +30,9 @@ const OverViewTab = () => {
     });
     const router = useRouter()
     const { coins } = router.query
-    let seventhDay: number[] | undefined
     useEffect(() => {
         const dailyPrices = dayData?.prices?.map((item: [number, number]) => item[1]);
         const yearlyPrices = yearlyData?.prices?.map((item: [number, number]) => item[1]);
-        seventhDay = daysData?.prices?.map((item: [number, number]) => item[1]);
         if (dailyPrices && yearlyPrices) {
             setData({
                 low: Math.min(...dailyPrices),
@@ -53,8 +49,6 @@ const OverViewTab = () => {
             current_price: singleCoin?.market_data?.current_price?.usd ?? 0,
             low_24h: singleCoin?.market_data?.low_24h?.usd ?? 0,
             high_24h: singleCoin?.market_data?.high_24h?.usd ?? 0,
-            low_7d: seventhDay ? Math.min(...seventhDay) : 0,
-            hihg_7d: seventhDay ? Math.max(...seventhDay) : 0,
             market_cap: singleCoin?.market_data?.market_cap?.usd ?? 0,
             market_cap_rank: singleCoin?.market_cap_rank ?? 0,
             total_volume: singleCoin?.market_data?.total_volume?.usd ?? 0,
@@ -79,8 +73,6 @@ const OverViewTab = () => {
         atl,
         ath_date,
         atl_date,
-        low_7d,
-        hihg_7d,
     } = cryptoData;
 
 
@@ -92,11 +84,11 @@ const OverViewTab = () => {
                     <span>{`Today's Low`}</span>
                     <span>{`Today's High`}</span>
                 </div>
-                <div className=' d-flex align-items-center justify-content-center'>
-                    <div className="position-relative gradient-bar">
-                        <div className='position-absolute d-flex flex-column align-items-center' style={{ left: `${(((current - low) / (high - low)) * 100)}%`, marginTop: '0.4em' }}>
+                <div className=' d-flex align-items-start justify-content-center'>
+                    <div className="gradient-bar">
+                        <div className='position-absolute d-flex flex-column align-items-center' style={{ left: `${(((current - low) / (high - low)) * 100)}%`, marginTop: '0.4em', }}>
                             <ArrowUp color='#000' />
-                            {`$${current?.toFixed(2)}`}
+                            <span style={{ translate: 'transform(10, 10)' }}> {`$${current?.toFixed(2)}`}</span>
                         </div>
                     </div>
                 </div>
@@ -106,25 +98,6 @@ const OverViewTab = () => {
                     <span>${high.toFixed(2)}</span>
                 </div>
             </div>
-            {/* <div className="mb-6">
-                <div className="d-flex justify-content-between  text-secondary">
-                    <span>52W Low</span>
-                    <span>52W High</span>
-                </div>
-                <div className='d-flex align-items-center justify-content-center'>
-                    <div className="position-relative gradient-bar">
-                        <div className='position-absolute d-flex flex-column align-items-center' style={{ left: `${(((current - yearLow) / (yearHigh - yearLow)) * 100)}%`, marginTop: '0.4em' }}>
-                            <ArrowUp color='#000' />
-                            {`$${current?.toFixed(2)}`}
-                        </div>
-                    </div>
-                </div>
-
-                <div className="d-flex justify-content-between  text-secondary" >
-                    <span>${yearLow.toFixed(2)}</span>
-                    <span>${yearHigh.toFixed(2)}</span>
-                </div>
-            </div> */}
             <h3 className='fw-semibold text-secondary'>Fundamentals</h3>
             <div className="row  text-secondary">
                 <div className='col-md-6 col-12'>
