@@ -13,6 +13,7 @@
 html,
 body {
   max-width: 100vw;
+  max-height: 100vh;
 }
 
 body {
@@ -124,12 +125,7 @@ tr {
   display: grid;
 }
 
-@media only screen and (max-width:660px) {
-  .column {
-    display: flex;
-    flex-direction: column;
-  }
-}
+
 
 p {
   font-size: 1.2rem;
@@ -173,8 +169,10 @@ p {
 }
 
 .hero-container {
-  position: relative;
-  height: 83.8vh;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0px;
   background: linear-gradient(135deg, #001f3f, #00364d);
   color: white;
   display: flex;
@@ -231,13 +229,13 @@ p {
 }
 
 .icon1 {
-  top: 10%;
+  top: 20%;
   left: 20%;
   animation-delay: 0s;
 }
 
 .icon2 {
-  top: 20%;
+  top: 30%;
   right: 10%;
   animation-delay: 1s;
 }
@@ -253,8 +251,9 @@ p {
   left: 24%;
   animation-delay: 3s;
 }
+
 .icon5 {
-  bottom:  5%;
+  bottom: 5%;
   right: 18%;
   animation-delay: 4s;
 }
@@ -264,6 +263,7 @@ p {
   left: 40%;
   animation-delay: 5s;
 }
+
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -276,4 +276,23 @@ p {
   100% {
     transform: translateY(0);
   }
+}
+
+@media (max-width:660px) {
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icon3 {
+    bottom: 28%;
+    right: 12%;
+  }
+
+  .icon4 {
+    top: 60%;
+    left: 12%;
+  }
+
+
 }

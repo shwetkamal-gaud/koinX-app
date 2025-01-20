@@ -85,10 +85,10 @@ const OverViewTab = () => {
                     <span>{`Today's High`}</span>
                 </div>
                 <div className=' d-flex align-items-start justify-content-center'>
-                    <div className="gradient-bar">
-                        <div className='position-absolute d-flex flex-column align-items-center' style={{ left: `${(((current - low) / (high - low)) * 100)}%`, marginTop: '0.4em', }}>
+                    <div className="gradient-bar d-flex align-items-start">
+                        <div className='position-absolute d-flex flex-column align-items-start' style={{ left: `${(((current - low) / (high - low)) * 100) > 0 ? (((current - low) / (high - low)) * 100) : 0}%`, marginTop: '0.4em', }}>
                             <ArrowUp color='#000' />
-                            <span style={{ translate: 'transform(10, 10)' }}> {`$${current?.toFixed(2)}`}</span>
+                            <span style={{transform:'translate(-32px,0px)'}} className='align-self-center'> {`$${current?.toFixed(2)}`}</span>
                         </div>
                     </div>
                 </div>
