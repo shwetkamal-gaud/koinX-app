@@ -1,5 +1,5 @@
 import { call, put } from 'redux-saga/effects';
-import { SET_DATA, SET_DATA_BY_DAY, SET_DATA_BY_YEARLY, SET_SINGLE_COIN, SET_SINGLE_DATA, SET_TRENDING, SET_DATA_BY_DAYS } from '../actions/actions'
+import { SET_DATA, SET_DATA_BY_DAY, SET_DATA_BY_YEARLY, SET_SINGLE_COIN, SET_SINGLE_DATA, SET_TRENDING } from '../actions/actions'
 import { getRequest, getSingleCoinRequest, getSingleRequest, getTrendingRequest, getDataForDaysRequest } from './getRequests';
 import { SagaIterator } from 'redux-saga';
 

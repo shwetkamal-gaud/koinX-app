@@ -7,7 +7,7 @@ const GetStarted = () => {
     <div className="p-4  border bg-primary rounded  d-flex flex-column align-items-center gap-3  text-align-center shadow">
       <Link href="#">
         <h5 style={{ color: 'white' }}>
-          Hurrah! You've embarked on your digital currency journey with us.
+          {`Hurrah! You've embarked on your digital currency journey with us.`}
         </h5>
       </Link>
       <p className="mb-1 justify-content-center" style={{ color: '#e2e8f0' }}>With our range of free features, KoinX empowers you to stay informed and better understand your tax reports.</p>
