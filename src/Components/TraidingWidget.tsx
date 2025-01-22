@@ -25,7 +25,7 @@ function TradingViewWidget() {
       script.innerHTML = `
         {
           "autosize": true,
-          "symbol": "CRYPTO:${(currCoin?.symbol)?.toUpperCase()}USD",
+          "symbol": "BYBIT:${(currCoin?.symbol)?.toUpperCase()}USDT",
           "interval": "D",
           "timezone": "Etc/UTC",
           "theme": "white",

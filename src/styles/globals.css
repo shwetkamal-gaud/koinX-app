@@ -205,10 +205,11 @@ p {
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
 }
 
 .cta-button:hover {
-  transform: scale(1.05);
+  transform: scale(2.05);
   box-shadow: 0px 10px 20px rgba(0, 102, 255, 0.5);
 }
 
@@ -236,31 +237,31 @@ p {
 .icon2 {
   top: 30%;
   right: 10%;
-  animation-delay: 1s;
+  animation-delay: 1.2s;
 }
 
 .icon3 {
   bottom: 32%;
   right: 12%;
-  animation-delay: 2s;
+  animation-delay: 1.4s;
 }
 
 .icon4 {
   top: 50%;
   left: 24%;
-  animation-delay: 3s;
+  animation-delay: 1.6s;
 }
 
 .icon5 {
   bottom: 5%;
   right: 18%;
-  animation-delay: 4s;
+  animation-delay: 1.8s;
 }
 
 .icon6 {
   top: 80%;
   left: 40%;
-  animation-delay: 5s;
+  animation-delay: 2s;
 }
 
 @keyframes float {
@@ -294,4 +295,18 @@ p {
   }
 
 
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

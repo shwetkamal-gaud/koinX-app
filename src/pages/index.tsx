@@ -6,13 +6,13 @@ import USDT from '../assets/Tether (USDT).svg'
 import POL from '../assets/Polygon (MATIC).svg'
 import XRP from '../assets/XRP (XRP).svg'
 import AAVE from '../assets/Aave (AAVE).svg'
+import Link from "next/link";
 
 
 export default function Home() {
   return (
     <>
       <div className="hero-container">
-        {/* Floating Icons */}
         <div className="floating-icons">
           <Image src={ETH} alt="Ethereum" className="icon icon2" />
           <Image src={BTC} alt="Bitcoin" className="icon icon1" />
@@ -24,7 +24,7 @@ export default function Home() {
         <div className="hero-content">
           <h1>Your All-in-One Crypto Portfolio Tracker</h1>
           <p>Explore real-time crypto details, interactive graphs, and a profit calculator to manage your investments like a pro.</p>
-          <button className="cta-button">Get Started for FREE →</button>
+          <Link href={'/cryptocurrency'} className="cta-button" >Get Started for FREE →</Link>
         </div>
       </div>
     </>

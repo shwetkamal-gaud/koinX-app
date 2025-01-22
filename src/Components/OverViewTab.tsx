@@ -42,7 +42,7 @@ const OverViewTab = () => {
                 yearHigh: Math.max(...yearlyPrices),
             });
         }
-    }, [dayData, yearlyData, router, singleCoin, daysData])
+    }, [dayData, yearlyData, router, singleCoin, daysData, simplePrice, coins])
     useEffect(() => {
         setCryptoData({
             name: singleCoin?.name ?? '',

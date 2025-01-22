@@ -24,7 +24,7 @@ const CryptoCoins = () => {
     }, [router])
 
     return (
-        <div className='table-responsive table-wrapper'>
+        <div className='table-responsive table-wrapper rounded'>
             <table className="table overflow-auto w-100  table-hover">
                 <thead className='p-2 position-sticky top-0'>
                     <tr>

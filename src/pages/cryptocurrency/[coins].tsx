@@ -26,18 +26,18 @@ const CryptoCoins = () => {
 
       dispatch(getSingleCoins(`${coins}`))
     }
-  }, [coins, router])
+  }, [coins, router, dispatch])
 
   useEffect(() => {
     if (singleCoin?.symbol) {
       dispatch(getTrades(`${singleCoin?.symbol?.toUpperCase()}USDT`))
     }
-  }, [singleCoin, router])
+  }, [singleCoin, router, dispatch])
 
 
 
   return (
-    <div className=' d-flex  flex-column gap-2'>
+    <div className=' d-flex flex-column gap-2'>
       <div className='px-2 gap-md-0 gap-2 mt-1 row mx-0'>
         <div className='col-12 col-md-9 pb-1 d-flex flex-column gap-3'>
           <div className='height p-2 bg-white border d-flex flex-column align-items-center gap-3  rounded text-align-center shadow'>

@@ -9,7 +9,7 @@ import { useEffect } from "react";
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     if (document !== undefined) {
-        import('bootstrap/dist/js/bootstrap.bundle.min.js');
+      import('bootstrap/dist/js/bootstrap.bundle.min.js');
     }
   }, []);
   return (

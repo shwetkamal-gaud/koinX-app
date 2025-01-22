@@ -15,7 +15,6 @@ export function* fetchDataSaga(): SagaIterator {
 export function* getSingleDataHanlder(action: { type: string, payload: string }): SagaIterator {
     try {
         const response = yield call(getSingleRequest, action.payload)
-        console.log('single', response)
         yield put({ type: SET_SINGLE_DATA, payload: response });
     }
     catch (error) {

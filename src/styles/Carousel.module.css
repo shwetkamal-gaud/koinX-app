@@ -5,6 +5,7 @@
     width: 100%;
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     padding: 1rem 0;
 }
 
@@ -26,5 +27,31 @@
 
     100% {
         transform: translateX(calc(-250px * 7))
+    }
+}
+
+.sliderLeft {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2rem 0;
+}
+
+.slidetrackLeft {
+    animation: scrolling 40s linear infinite;
+    display: flex;
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(calc(-250px * 7))
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }

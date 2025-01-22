@@ -48,14 +48,14 @@ const About = () => {
             <div className='flex flex-col  border-bottom p-2'>
                 <p>
                     {data.name}{`'s price today is`} <b>${data.current_price.toFixed(2)}</b>, with a 24-hour trading volume of
-                    <b>${(data.volume24 / 1e9).toFixed(2)} B</b>. {(data.symbol).toUpperCase()} is
-                    <b>{data.change24h > 0 ? "+" : ""}{data.change24h}%</b> in the last 24 hours.
+                    <b> ${(data.volume24 / 1e9).toFixed(2)}B</b>. {(data.symbol).toUpperCase()} is
+                    <b>{data.change24h > 0 ? " +" : " -"}{data.change24h}%</b> in the last 24 hours.
 
-                    It is currently {data.change24h}% from its 7-day all-time high of <b>${data.high24h}</b> and
-                    {Math.abs(data.change24h)}% from its 7-day all-time low of <b>${data.low24h}</b>.
-
-                    {(data.symbol).toUpperCase()} has a circulating supply of <b>{(data.circulatingSupply / 1e6).toFixed(2)} M {(data.symbol).toUpperCase()}</b> and
-                    a max supply of <b>{(data.maxSupply / 1e6).toFixed(2)} M BTC</b>.
+                    It is currently <b>{data.change24h}%</b> from its 7-day all-time high of <b>${data.high24h}</b> and 
+                    <b> {Math.abs(data.change24h)}%</b> from its 7-day all-time low of <b>${data.low24h}</b>.
+                    &nbsp;
+                    {(data.symbol).toUpperCase()} has a circulating supply of <b>{(data.circulatingSupply / 1e6).toFixed(2)}M {(data.symbol).toUpperCase()}</b> and
+                    a max supply of <b>{(data.maxSupply / 1e6).toFixed(2)}M BTC</b>.
                 </p>
             </div>
 
