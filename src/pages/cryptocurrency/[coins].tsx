@@ -1,3 +1,4 @@
+import Carousel from '@/Components/Carousel'
 import GetStarted from '@/Components/GetStarted'
 import Tabs from '@/Components/Tabs'
 import TraidingWidget from '@/Components/TraidingWidget'
@@ -22,10 +23,10 @@ const CryptoCoins = () => {
       dispatch(getSingleData(`${coins}`))
       dispatch(getTrending())
       dispatch(getDataByDays(`${coins}`))
-     
+
       dispatch(getSingleCoins(`${coins}`))
     }
-  }, [coins,  router])
+  }, [coins, router])
 
   useEffect(() => {
     if (singleCoin?.symbol) {
@@ -36,17 +37,20 @@ const CryptoCoins = () => {
 
 
   return (
-    <div className='px-2 row mx-0'>
-      <div className='col-12 col-md-9 pb-1 d-flex flex-column gap-3'>
-        <div className='height p-2 bg-white border d-flex flex-column align-items-center gap-3  rounded text-align-center shadow'>
-          <TraidingWidget />
+    <div className=' d-flex  flex-column gap-2'>
+      <div className='px-2 gap-md-0 gap-2 mt-1 row mx-0'>
+        <div className='col-12 col-md-9 pb-1 d-flex flex-column gap-3'>
+          <div className='height p-2 bg-white border d-flex flex-column align-items-center gap-3  rounded text-align-center shadow'>
+            <TraidingWidget />
+          </div>
+          <Tabs />
         </div>
-        <Tabs />
+        <div className='col-12 col-md-3 d-flex flex-column gap-3'>
+          <GetStarted />
+          <TrendingCoins />
+        </div>
       </div>
-      <div className='col-12 col-md-3 d-flex flex-column gap-3'>
-        <GetStarted />
-        <TrendingCoins />
-      </div>
+      <Carousel />
     </div>
   )
 }

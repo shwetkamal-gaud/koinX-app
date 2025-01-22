@@ -76,7 +76,6 @@ tr {
 
 .red {
   background-color: rgba(224, 54, 54, 0.452);
-  width: 24%;
   padding: 0 0.2em;
   border-radius: 3px;
   display: flex;
@@ -87,11 +86,11 @@ tr {
 
 .green {
   background-color: rgba(80, 213, 80, 0.822);
-  width: 24%;
   border-radius: 3px;
   text-align: center;
   display: flex;
   align-items: center;
+  gap: 0.1em;
 }
 
 .text-green {

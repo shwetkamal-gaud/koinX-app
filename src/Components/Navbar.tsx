@@ -3,10 +3,9 @@ import Breadcrumbs from "./Breadcrumbs"
 
 
 const navigation = [
-    { name: 'Crypto List', href: '/cryptocurrency', current: false },
-    { name: 'Free Tools', href: '#', current: false },
-    { name: 'Resource Cemter', href: '#', current: false },
-    { name: 'Get Started', href: '#', current: false },
+    { name: 'Crypto List', href: '/cryptocurrency', current: false, dropDownItems: [] },
+    { name: 'Free Tools', href: '#', current: false, dropDownItems: [{ name: 'Profit Calculator', page: '' }] },
+    { name: 'Give Star on GitHub', href: '#', current: false, dropDownItems: [] },
 ]
 
 export default function Navbar() {
@@ -20,15 +19,26 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse justify-content-md-end " id="navbarNav">
                     <ul className="navbar-nav">
                         {navigation.map((item, index) => (
-                            <li key={index} className='nav-item '>
+                            <li key={index} className={`nav-item ${item.dropDownItems.length > 0 && 'dropdown'}`}>
                                 <Link
                                     key={item.name}
                                     href={item.href}
+                                    role={item.dropDownItems.length > 0 ? 'button' : ''} data-bs-toggle={item.dropDownItems.length > 0 && 'dropdown'} aria-expanded={item.dropDownItems.length > 0 && 'false'}
                                     aria-current={item.current ? 'page' : undefined}
-                                    className={`${navigation.length - 1 === index ? 'nav-btn btn mx-auto' : ''} nav-link text-white`}
+                                    className={`${navigation.length - 1 === index ? 'nav-btn btn mx-auto' : ''} nav-link text-white ${item.dropDownItems.length > 0 && 'dropdown-toggle'} `}
                                 >
                                     {item.name}
                                 </Link>
+                                {item.dropDownItems &&
+                                    <ul className="dropdown-menu">
+                                        {item.dropDownItems.map((menu: { name: string, page: string }, id: number) => {
+                                            return (
+                                                <li key={id}><a className="dropdown-item" href={menu.page}>{menu.name}</a></li>
+                                            )
+                                        })}
+                                    </ul>}
+
+
                             </li>
                         ))}
                     </ul>

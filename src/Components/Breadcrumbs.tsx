@@ -4,7 +4,14 @@ import React from 'react'
 
 const Breadcrumbs = () => {
     const router = useRouter()
-    const pathArray = router.asPath.split('/').filter((path) => path !== '')
+    const pathArray = router.asPath.split('/').filter((path) => {
+        if (path !== '') {
+            if (path.includes('#')) {
+                path.split('#')
+            }
+            return path
+        }
+    })
 
     return (
 

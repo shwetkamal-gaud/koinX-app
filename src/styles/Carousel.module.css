@@ -1,0 +1,30 @@
+.slider {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    padding: 1rem 0;
+}
+
+
+
+.slidetrack {
+    animation: scroll 40s linear infinite;
+    display: flex;
+}
+
+.slide {
+    width: 250px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 7))
+    }
+}

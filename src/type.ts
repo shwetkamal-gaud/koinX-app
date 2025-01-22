@@ -40,10 +40,11 @@ export interface SimplePrice {
     };
 };
 
-export interface Data{
+export interface Data {
     price: number;
     price_btc: string;
     price_change_percentage_24h: { [currency: string]: number };
+    sparkline: string
 }
 
 export interface Item {
@@ -107,7 +108,7 @@ export interface MarketData {
     atl_date?: { [currency: string]: string };
     ath_date?: { [currency: string]: string };
     circulating_supply: number;
-    max_supply:number;
+    max_supply: number;
 }
 
 export interface CommunityData {
@@ -140,7 +141,7 @@ export interface CoinDetails {
     community_data?: CommunityData;
     developer_data?: DeveloperData;
     last_updated?: string;
-    
+
 }
 
 
