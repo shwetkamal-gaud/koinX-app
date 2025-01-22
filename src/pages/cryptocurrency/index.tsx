@@ -21,7 +21,7 @@ const CryptoCoins = () => {
     }, [data])
     useEffect(() => {
         dispatch(getData())
-    }, [router])
+    }, [router, dispatch])
 
     return (
         <div className='table-responsive table-wrapper rounded'>

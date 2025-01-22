@@ -11,11 +11,11 @@ const ProfitCalc = () => {
     const [totalProfit, setTotalProfit] = useState(0)
     useEffect(() => {
         setTotalInvestmentFee((investedAmmount * investmentFeePercent) / 100)
-        let totalInvested = investedAmmount - totalInvestmentFee
-        let cryptoQuantity = totalInvested / initialCryptoPrice;
-        let totalSellingValue = cryptoQuantity * sellingPrice;
+        const totalInvested = investedAmmount - totalInvestmentFee
+        const cryptoQuantity = totalInvested / initialCryptoPrice;
+        const totalSellingValue = cryptoQuantity * sellingPrice;
         setTotalExitFee((totalSellingValue * exitFeePercent) / (100 + exitFeePercent))
-        let netSellingValue = totalSellingValue - totalExitFee;
+        const netSellingValue = totalSellingValue - totalExitFee;
         setTotalProfit(netSellingValue - investedAmmount)
     }, [initialCryptoPrice, investedAmmount, sellingPrice, investmentFeePercent, exitFeePercent, totalExitFee, totalInvestmentFee])
     return (
