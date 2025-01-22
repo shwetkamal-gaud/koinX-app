@@ -26,7 +26,7 @@ const CryptoCoins = () => {
 
       dispatch(getSingleCoins(`${coins}`))
     }
-  }, [coins, router, dispatch])
+  }, [coins, dispatch])
 
   useEffect(() => {
     if (singleCoin?.symbol) {

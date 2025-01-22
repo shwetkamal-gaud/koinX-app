@@ -59,7 +59,7 @@ const ProfitCalc = () => {
                 </div>
             </div>
             <hr />
-            <div className='d-flex justify-content-between align-items'>
+            <div className='d-flex flex-column flex-md-row justify-content-between align-items'>
                 <div className='d-flex flex-column col-md-3 col-12'>
                     <span>Total Investment Fee: ₹{totalInvestmentFee.toFixed(2)}</span>
                     <span>Total Exit Fee: ₹{totalExitFee.toFixed(2)}</span>
