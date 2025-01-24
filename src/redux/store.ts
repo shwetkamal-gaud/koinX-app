@@ -17,9 +17,9 @@ const store = configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
-            thunk: false, 
+            thunk: false,
             serializableCheck: false,
-            immutableCheck: true, 
+            immutableCheck: process.env.NODE_ENV !== 'production',
         }).concat(sagaMiddleware),
 }
 );
