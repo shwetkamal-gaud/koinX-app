@@ -4,11 +4,8 @@ import Tabs from '@/Components/Tabs'
 import TraidingWidget from '@/Components/TraidingWidget'
 import TrendingCoins from '@/Components/TrendingCoins'
 import { getDataByDays, getSingleCoins, getTrending } from '@/redux/actions/actions'
-import { RootState } from '@/redux/store'
-
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux'
 
 import { useDispatch } from 'react-redux'
 
