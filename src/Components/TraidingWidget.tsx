@@ -28,7 +28,7 @@ function TradingViewWidget() {
           "symbol": "BYBIT:${(singleCoin?.symbol)?.toUpperCase()}USDT",
           "interval": "D",
           "timezone": "Etc/UTC",
-          "theme": "white",
+          "theme": "light",
           "style": "2",
           "locale": "en",
           "backgroundColor": "rgba(255, 255, 255, 1)",

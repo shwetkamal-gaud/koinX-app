@@ -3,7 +3,7 @@ import GetStarted from '@/Components/GetStarted'
 import Tabs from '@/Components/Tabs'
 import TraidingWidget from '@/Components/TraidingWidget'
 import TrendingCoins from '@/Components/TrendingCoins'
-import { getData, getDataByDays, getTrades, getSingleCoins, getSingleData, getTrending } from '@/redux/actions/actions'
+import { getDataByDays, getSingleCoins, getTrending } from '@/redux/actions/actions'
 import { RootState } from '@/redux/store'
 
 import { useRouter } from 'next/router'
@@ -19,20 +19,13 @@ const CryptoCoins = () => {
   const { singleCoin } = useSelector((state: RootState) => state.api)
   useEffect(() => {
     if (coins) {
-      dispatch(getData())
-      dispatch(getSingleData(`${coins}`))
       dispatch(getTrending())
       dispatch(getDataByDays(`${coins}`))
-
       dispatch(getSingleCoins(`${coins}`))
     }
   }, [coins, dispatch])
 
-  useEffect(() => {
-    if (singleCoin?.symbol) {
-      dispatch(getTrades(`${singleCoin?.symbol?.toUpperCase()}USDT`))
-    }
-  }, [singleCoin, router, dispatch])
+
 
 
 
