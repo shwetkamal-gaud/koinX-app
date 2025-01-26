@@ -16,7 +16,6 @@ const CryptoCoins = () => {
   const dispatch = useDispatch()
   const router = useRouter()
   const { coins } = router.query
-  const { singleCoin } = useSelector((state: RootState) => state.api)
   useEffect(() => {
     if (coins) {
       dispatch(getTrending())
