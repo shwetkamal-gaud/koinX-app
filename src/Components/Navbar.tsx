@@ -5,7 +5,7 @@ import Breadcrumbs from "./Breadcrumbs"
 const navigation = [
     { name: 'Crypto List', href: '/cryptocurrency', current: false, dropDownItems: [] },
     { name: 'Free Tools', href: '#', current: false, dropDownItems: [{ name: 'Profit Calculator', page: '/profit-calculator' }] },
-    { name: 'Give Star on GitHub', href: '#', current: false, dropDownItems: [] },
+    { name: 'Give Star on GitHub', href: 'https://github.com/shwetkamal-gaud/koinX-app', current: false, dropDownItems: [] },
 ]
 export default function Navbar() {
     return (

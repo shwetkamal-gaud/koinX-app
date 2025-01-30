@@ -1,23 +1,15 @@
 import { RootState } from '@/redux/store';
-import { CoinDetails } from '@/type';
-import React, { useEffect, useRef, memo, useState } from 'react';
+import { useRouter } from 'next/router';
+import React, { useEffect, useRef, memo, } from 'react';
 import { useSelector } from 'react-redux';
 
 function TradingViewWidget() {
   const container = useRef<HTMLDivElement>(null);
-  const { singleCoin, simplePrice } = useSelector((state: RootState) => state.api)
-  const [currCoin, setCurrCoin] = useState<CoinDetails>()
-  useEffect(() => {
-    setCurrCoin(singleCoin)
-  }, [singleCoin])
-
+  const { singleCoin } = useSelector((state: RootState) => state.api)
+  const router = useRouter()
   useEffect(
     () => {
-      if (!simplePrice || !container.current) return;
-      const coinName = Object.keys(simplePrice)[0];
-      if (!coinName) return;
-
-      container.current.innerHTML = "";
+      container.current ? container.current.innerHTML = "" : null;
       const script = document.createElement("script");
       script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
       script.type = "text/javascript";
@@ -38,9 +30,9 @@ function TradingViewWidget() {
           "calendar": false,
           "support_host": "https://www.tradingview.com"
         }`;
-      container.current.appendChild(script);
+      container.current ? container.current.appendChild(script) : null;
     },
-    [simplePrice, currCoin, singleCoin]
+    [singleCoin, router]
   );
 
   return (

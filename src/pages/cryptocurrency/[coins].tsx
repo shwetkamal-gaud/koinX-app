@@ -16,14 +16,10 @@ const CryptoCoins = () => {
   useEffect(() => {
     if (coins) {
       dispatch(getTrending())
-      dispatch(getDataByDays(`${coins}`))
       dispatch(getSingleCoins(`${coins}`))
+      dispatch(getDataByDays(`${coins}`))
     }
   }, [coins, dispatch])
-
-
-
-
 
   return (
     <div className=' d-flex flex-column gap-2'>

@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 const OverViewTab = () => {
-    const { dayData, daysData, yearlyData, simplePrice, singleCoin } = useSelector((state: RootState) => state.api)
+    const { yearlyData, singleCoin } = useSelector((state: RootState) => state.api)
     const [cryptoData, setCryptoData] = useState({
         current_price: 0,
         name: '',
@@ -31,18 +31,17 @@ const OverViewTab = () => {
     const router = useRouter()
     const { coins } = router.query
     useEffect(() => {
-        const dailyPrices = dayData?.prices?.map((item: [number, number]) => item[1]);
         const yearlyPrices = yearlyData?.prices?.map((item: [number, number]) => item[1]);
-        if (dailyPrices && yearlyPrices) {
+        if (singleCoin && yearlyPrices) {
             setData({
-                low: Math.min(...dailyPrices),
-                high: Math.max(...dailyPrices),
-                current: simplePrice[`${coins}`]?.usd ?? 0,
+                low: singleCoin?.market_data?.low_24h?.usd ?? 0,
+                high: singleCoin?.market_data?.high_24h?.usd ?? 0,
+                current: singleCoin?.market_data?.current_price?.usd ?? 0,
                 yearLow: Math.min(...yearlyPrices),
                 yearHigh: Math.max(...yearlyPrices),
             });
         }
-    }, [dayData, yearlyData, router, singleCoin, daysData, simplePrice, coins])
+    }, [yearlyData, router, singleCoin, coins])
     useEffect(() => {
         setCryptoData({
             name: singleCoin?.name ?? '',

@@ -9,5 +9,4 @@ export function* rootSaga() {
     yield takeEvery(GET_TRENDING, getTrendingHandler)
     yield takeEvery(GET_DATA_BY_DAY, getDataByDaysHandler)
     yield takeEvery(GET_SINGLE_COIN, getSingleCoinHandler)
-    // yield takeEvery(GET_TRADES, getTradesHandler)
 }

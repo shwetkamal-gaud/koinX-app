@@ -12,13 +12,11 @@ export const getTrendingRequest = async () => {
     return get(`/search/trending`)
 }
 
-export const getDataForDaysRequest = async (coins: string ) => {
-    console.log(coins,"coins")
-    const [oneDayData, yearlyData] = await Promise.all([
-        get(`/coins/${coins}/market_chart?vs_currency=usd&days=1`),
+export const getDataForDaysRequest = async (coins: string) => {
+    const [yearlyData] = await Promise.all([
         get(`/coins/${coins}/market_chart?vs_currency=usd&days=365`),
     ]);
-    return { oneDayData, yearlyData };
+    return { yearlyData };
 };
 
 export const getSingleCoinRequest = async (data: string) => {
