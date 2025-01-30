@@ -9,9 +9,9 @@ const navigation = [
 ]
 export default function Navbar() {
     return (
-        <nav className="navbar blur-filter navbar-expand-lg flex-column align-items-start shadow-lg">
+        <nav className="navbar blur-filter navbar-expand-lg flex-column align-items-start shadow-lg px-4">
             <div className="container-fluid d-flex">
-                <Link className="navbar-brand fs-1 text-white" href="#">Koin<span style={{ color: 'rgb(46, 91, 176)' }}>X</span></Link>
+                <Link className="navbar-brand fs-2 text-white" href="#">Koin<span style={{ color: '#FF8F01' }}>X</span></Link>
                 <button className="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon "></span>
                 </button>

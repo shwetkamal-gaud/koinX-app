@@ -306,3 +306,11 @@ input[type="number"]::-webkit-outer-spin-button {
 tr {
   border-bottom: 2px solid rgb(203, 200, 200) !important;
 }
+
+table,
+th,
+td {
+  border: none !important;
+  vertical-align: middle !important;
+
+}

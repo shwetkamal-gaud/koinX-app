@@ -9,7 +9,8 @@ function TradingViewWidget() {
   const router = useRouter()
   useEffect(
     () => {
-      container.current ? container.current.innerHTML = "" : null;
+      if (!container.current) return 
+      container.current.innerHTML = "";
       const script = document.createElement("script");
       script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
       script.type = "text/javascript";
@@ -30,7 +31,7 @@ function TradingViewWidget() {
           "calendar": false,
           "support_host": "https://www.tradingview.com"
         }`;
-      container.current ? container.current.appendChild(script) : null;
+      container.current.appendChild(script) 
     },
     [singleCoin, router]
   );
