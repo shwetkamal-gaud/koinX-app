@@ -9,7 +9,7 @@ const GetStarted = () => {
         {`Hurrah! You've embarked on your digital currency journey with us.`}
       </h5>
       <p className="mb-1 justify-content-center" style={{ color: '#e2e8f0' }}>With our range of free features, KoinX empowers you to stay informed and better understand your tax reports.</p>
-      <Image src={GetStartedSVG} alt='GetStartedSVG' width={150} height={150} />
+      <Image loading="lazy" src={GetStartedSVG} alt='GetStartedSVG' width={150} height={150} />
       <Link href='https://github.com/shwetkamal-gaud/koinX-app' className="d-inline-flex mx-auto align-items-center px-3 py-2  text-align-center text-black bg-white btn ">
         Give Star On GitHub
         <svg width={10} className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">

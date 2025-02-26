@@ -48,7 +48,7 @@ const CryptoCoins = () => {
                                 <tr key={index} className="border-b " onClick={(e) => handleOnclick(e, item?.id, item?.symbol)}>
                                     <td className=" d-flex align-items-center gap-2">
                                         <span className='text-secondary'>{item.market_cap_rank}</span>
-                                        <Image src={item?.image ?? ''} alt={item?.name ?? ''} width={30} height={30} />
+                                        <Image loading="lazy" src={item?.image ?? ''} alt={item?.name ?? ''} width={30} height={30} />
                                         <span className='d-flex flex-column'>
                                             <span style={{ fontWeight: '500' }}>{item?.name}</span>
                                             <span className='text-secondary'>{item?.symbol?.toLocaleUpperCase()}</span>
