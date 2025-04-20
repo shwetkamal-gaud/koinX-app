@@ -44,7 +44,7 @@ const CryptoCoins = () => {
         <div className='d-flex flex-column gap-3 p-3'>
             <h3>Cryptocurrency prices and market caps</h3>
             {
-                loading ? <LoadingModal /> :
+                isloading ? <LoadingModal /> :
                     <div className='table-responsive table-wrapper shadow'>
 
                         <table className="table table-bordered-less overflow-auto  table-hovers">
