@@ -1,5 +1,5 @@
 import { call, put } from 'redux-saga/effects';
-import { SET_DATA, SET_DATA_BY_YEARLY, SET_SINGLE_COIN, SET_SINGLE_DATA, SET_TRENDING } from '../actions/actions'
+import { LOADING, SET_DATA, SET_DATA_BY_YEARLY, SET_SINGLE_COIN, SET_SINGLE_DATA, SET_TRENDING } from '../actions/actions'
 import { getRequest, getSingleCoinRequest, getSingleRequest, getTrendingRequest, getDataForDaysRequest } from './getRequests';
 import { SagaIterator } from 'redux-saga';
 
@@ -7,8 +7,12 @@ export function* fetchDataSaga(): SagaIterator {
     try {
         const response = yield call(getRequest);
         yield put({ type: SET_DATA, payload: response });
+        yield put({ type: LOADING, payload: true});
     } catch (error) {
         console.log(error);
+    }
+    finally{
+        yield put({ type: LOADING, payload: false});
     }
 }
 

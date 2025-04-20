@@ -17,6 +17,7 @@ export const GET_TRADES = "GET_TRADES";
 export const SET_TRADES = "SET_TRADES";
 export const GET_DATA_BY_DAYS = 'GET_DATA_BY_DAYS';
 export const SET_DATA_BY_DAYS = 'SET_DATA_BY_DAYS';
+export const LOADING = 'LOADING'
 export interface GetData {
     type: string;
 
